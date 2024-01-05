@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Template that uses Bootstrap</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!-- Bootstrap CSS -->
+        <link href="framework/css/bootstrap.min.css"
+            rel="stylesheet" />
+
+        <style>
+            p{
+                border-style: solid;
+                text-align: center; 
+            }
+
+             div{
+                 background-color: rgb(214, 212, 212);
+             }
+
+             p.align{
+                 text-align: left;
+                 background-color: white;
+             }
+
+             p.number{
+                 background-color: whitesmoke;
+             }
+
+             p.arithmetic1{
+                 background-color: blue;
+                 color: white;
+                 border-color: black;
+             }
+
+             p.arithmetic2{
+                background-color: orange;
+             }
+
+             p.special{
+                 background-color: black;
+                 color: white;
+                 border-color: white;
+             }
+
+             p.special0{
+                background-color: red;
+             }
+     </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row"><div class="col-sm-12"><p>A</p></div></div>
+            
+            <!-- Your calculator code here -->
+            <div class="row">
+                <div class="col-sm-12"><p class ="align">0</p></div>
+            </div>
+
+            <div class="row">
+                <div class ="col-sm-3"><p class = "special">MC</p></div>
+                <div class ="col-sm-3"><p class = "special">MR</p></div>
+                <div class ="col-sm-3"><p class = "special">M+</p></div>
+                <div class ="col-sm-3"><p class = "special">M-</p></div>
+            </div> 
+
+            <div class="row"> 
+                <div class ="col-sm-3"><p class = "special">√x</p></div>
+                <div class ="col-sm-3"><p class = "special">%</p></div>
+                <div class ="col-sm-3"><p class = "special0">AC</p></div>
+                <div class ="col-sm-3"><p class = "arithmetic1">÷</p></div>
+            </div> 
+
+            <div class="row"> 
+                <div class ="col-sm-3"><p class = "number">7</p></div>
+                <div class ="col-sm-3"><p class = "number">8</p></div>
+                <div class ="col-sm-3"><p class = "number">9</p></div>
+                <div class ="col-sm-3"><p class = "arithmetic1">x</p></div>
+            </div> 
+
+            <div class="row"> 
+                <div class ="col-sm-3"><p class = "number">4</p></div>
+                <div class ="col-sm-3"><p class = "number">5</p></div>
+                <div class ="col-sm-3"><p class = "number">6</p></div>
+                <div class ="col-sm-3"><p class = "arithmetic1">-</p></div>
+            </div> 
+
+            <div class="row"> 
+                <div class ="col-sm-3"><p class = "number">1</p></div>
+                <div class ="col-sm-3"><p class = "number">2</p></div>
+                <div class ="col-sm-3"><p class = "number">3</p></div>
+                <div class ="col-sm-3"><p class = "arithmetic1">+</p></div>
+            </div>
+
+            <div class="row"> 
+                <div class ="col-sm-3"><p class = "number">0</p></div>
+                <div class ="col-sm-3"><p class = "number">.</p></div>
+                <div class ="col-sm-3"><p class = "number">Ans</p></div>
+                <div class ="col-sm-3"><p class = "arithmetic2">=</p></div>
+            </div>
+
+            <div class="row"><div class="col-sm-12"><p>C</p></div></div>
+        </div>
+
+        <!-- Bootstrap javascript plug-ins -->
+        <script src="framework/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
