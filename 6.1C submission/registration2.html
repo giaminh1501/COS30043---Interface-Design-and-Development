@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Task 6.1C: Form Validation</title>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"> -->
+    <!-- link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet" -->
+    <link href="framework/css/vuetify-v3.0.0-beta.0.min.css" rel="stylesheet">
+	<meta charset="utf-8" >
+    <meta name="description" content="... ...">
+	<meta name="keywords" content="... ...">
+	<meta name="author" content="... ...">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+    <!-- Bootstrap CSS -->
+    <link href="framework/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        div.container{
+            min-width: 800px;
+        }
+        
+        p.display{
+            color: red;
+        }
+
+        .display{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+	<div id="app" class="container">
+        <v-app>
+            <v-main>
+                <v-container>
+                    <div class="row"><h1>Registration Web Form</h1></div><br />
+
+                    <div class="row"><p class="display">Please fill in all (*) fields before submitting</p></div><br />
+
+                    <v-form ref="myForm" method="post" v-model="valid" action="http://mercury.swin.edu.au/it000000/formtest.php">
+                        <fieldset>
+                            <legend>Personal Information</legend>
+                            
+                            <v-text-field name="firstName" v-model="firstName" :rules="fnameRules" label="First Name *"></v-text-field>
+                            <v-text-field name="lastName" v-model="lastName" :rules="lnameRules" label="Last Name *"></v-text-field>
+                            <v-text-field name="email" v-model="email" type="email" :rules="emailRules" label="Email *"></v-text-field>
+                            <v-text-field name="address" v-model="address" :rules="addressRules" label="Street Address (Optional)"></v-text-field>
+                            <v-text-field name="suburb" v-model="suburb" :rules="suburbRules" label="Suburb (Optional)"></v-text-field>
+                            <v-text-field name="postcode" v-model="postcode" :rules="pcodeRules" label="Postcode *"></v-text-field>
+                            <v-text-field name="mobile" v-model="mobile" :rules="mobileRules" label="Mobile Number *"></v-text-field>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Register Information</legend>
+
+                            <v-text-field name="userName" v-model="userName" :rules="unameRules" label="User Name *"></v-text-field>
+                            <v-text-field name="password" v-model="password" type="password" :rules="passwordRules" label="Password *"></v-text-field>
+                            <v-text-field name="repassword" v-model="repassword" type="password" :rules="[(password === repassword) || 'Confirm password must match the password above!']" label="Confirm Password *"></v-text-field>
+                        </fieldset>
+
+                        <v-btn color="info" @click="show">Terms and Condition</v-btn>
+
+                        <v-btn  type="submit" :disabled="!valid" color="success" @click="validate" class="display">Submit</v-btn><br /><br />
+                        
+                        <div class="row"><p v-if="enable"><em>Terms and Condition</em></p></div>
+                
+                    </v-form>
+                </v-container>
+            </v-main>
+        </v-app>
+        
+	</div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@3.3.4/dist/vuetify.min.js"></script>
+  <script src="framework/js/appregistration2.js"></script>
+
+   
+</body>
+</html>
