@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Task 4.1P: Guessing Game</title>
+	<meta charset="utf-8" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+    <!-- Bootstrap CSS -->
+    <link href="framework/css/bootstrap.min.css"
+    rel="stylesheet" />
+
+    <style>
+        div.container{
+            min-width: fit-content;
+        }
+
+        button.display{
+            margin-left: 20px;
+        }
+
+        p.display{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+	<div id="app" class="container">
+        <h1>Number Guessing Game</h1>
+
+        <p>Enter your guess from 1 to 100: <input type="number" v-model="guess"></p>
+        
+        <p>
+            <button v-on:click="checkGuess()">Check Guess</button>
+            <button v-on:click="giveUp()" class="display">Give Up</button>
+            <button v-on:click="startOver()" class="display">Start Over</button>
+        </p>
+
+        <p class="display">{{ mess }}</p>
+	</div>
+
+    <!--  Loading VueJS -->
+	<script src="framework/js/vue.js"></script>
+
+    <!-- Bootstrap javascript plug-ins -->
+    <script src="framework/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom script file -->
+	<script src="framework/js/appgame.js"></script>
+</body>
+</html>
