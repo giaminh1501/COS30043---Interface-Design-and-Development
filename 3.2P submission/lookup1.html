@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+	<title>Task 3.2P: Unit Look Up</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Bootstrap CSS -->
+    <link href="framework/css/bootstrap.min.css"
+    rel="stylesheet" />
+
+	<style>
+		div.container{
+			min-width: 800px;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" class="container">
+        <div class="row">
+            <h1>Lookup App: Unit Search Filter</h1>
+        </div>
+
+		<div class="row">
+			<div class="col-sm-3"><!-- Using text box to get the selection -->
+				<p><strong><label for="code">Code:</label></strong><br />
+					<input type="text" id="code" v-model="lookUp.code" />
+				</p>
+			</div>
+
+            <div class="col-sm-3"><!-- Using text box to get the selection -->
+				<p><strong><label for="desc">Description:</label></strong><br />
+					<input type="text" id="desc" v-model="lookUp.desc" />
+				</p>
+			</div>
+
+			<div class="col-sm-6"><!-- Using radio buttons to get the selection -->
+					<strong><label>Unit Type:</label></strong><br />
+
+					<input type="radio" id="core" v-model="lookUp.type" value="Core" />
+					<label for = "core">Core</label><br />
+
+					<input type="radio" id="swDev" v-model="lookUp.type" value="Software Development" />
+					<label for = "swDev">Software Development</label><br />
+
+                    <input type="radio" id="sysAnal" v-model="lookUp.type" value="Systems Analysis" />
+					<label for = "sysAnal">Systems Analysis</label><br />
+
+                    <input type="radio" id="all" v-model="lookUp.type" value="" checked/>
+					<label for = "all">All</label><br />
+			</div>
+		</div>
+		<div class="row">
+		<div class="table-responsive">
+			<table  class="table table-striped table-hover">
+
+				<tr>
+					<th>Code</th>
+					<th>Description</th>
+                    <th>Credit Points</th>
+					<th>Unit Type</th>
+				</tr>
+				<!-- Using v-for to loop and list them -->
+				<tr v-for="m in filterMarks"   >
+					<td>{{m.code}}</td>
+					<td>{{m.desc}}</td>
+					<td>{{m.cp.toFixed(2)}}</td>
+                    <td>{{m.type}}</td>
+				</tr> 
+			</table>
+
+			</div>
+		</div>
+	</div>
+
+	<!--  Loading VueJS -->
+	<script src="framework/js/vue.js"></script>
+
+	<!-- Bootstrap javascript plug-ins -->
+    <script src="framework/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom script file -->
+	<script src="framework/js/lookup1.js"></script>   
+</body>
+</html>
