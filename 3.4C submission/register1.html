@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Task 3.4C: Registration</title>
+	<meta charset="utf-8" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+    <!-- Bootstrap CSS -->
+    <link href="framework/css/bootstrap.min.css"
+    rel="stylesheet" />
+
+    <style>
+        div.container{
+            min-width: 1000px;
+        }
+
+        p.warning1{
+            color: red;
+            margin-left: 20px;
+        }
+
+        p.warning2{
+            color: green;
+            margin-left: 20px;
+        }
+
+        div.display{
+            display: flex;
+        }
+
+        input.display{
+            margin-left: 20px;
+        }
+
+        div.display1{
+            display: block;
+        }
+
+        p.display{
+            margin-left: 230px;
+        }
+    </style>
+</head>
+
+<body>
+	<div id="app" class="container">
+        <h1>Registration App: Cloud Service</h1>
+
+        <p><h4>Registration App: Cloud Service</h4></p>
+
+        <p>Enter user name: <input type="text" v-model="name"></p>
+        <p>Enter password: <input type="password" v-model="pwd"></p>
+
+        <div class="display">
+            <p>Re-enter password: <input type="password" v-model="repwd"></p>   
+            <p class="warning1" v-if="pwd != repwd">Password does not match!</p>  
+            <p class="warning2" v-if="pwd == repwd">Password matched!</p> 
+        </div>
+         
+        <div class="display">
+            <p>
+                <div class="display1">
+                    <h4>Phone Information</h4>
+            
+                    <h6>Operating System</h6>
+
+                    <input type="radio" id="android" value="Android" v-model="reg.os" >
+                    <label for = "android">Android</label>
+
+                    <input class="display" type="radio" id="ios" value="IOS" v-model="reg.os" >
+                    <label for = "ios">IOS</label>
+
+                    <input class="display" type="radio" id="windows" value="Windows" v-model="reg.os" >
+                    <label for = "windows">Windows</label>
+                </div>
+            </p>
+
+            <p class="display">
+                <div class="display1">
+                    <h4>Model</h4>
+
+                    <select id="model" v-model="reg.model">
+                        <option v-for="m in filterModel" v-bind:value="m.model">
+                            {{m.model}}
+                        </option>
+                    </select>
+                </div>
+            </p> 
+        </div>
+
+        <br />
+        <h4>Summary</h4>
+            <ul>
+                <li>Username: {{name}}</li>
+                <li>OS: {{reg.os}}</li>
+                <li>Phone: {{reg.model}}</li> 
+            </ul>
+	</div>
+
+    <!--  Loading VueJS -->
+	<script src="framework/js/vue.js"></script>
+
+    <!-- Bootstrap javascript plug-ins -->
+    <script src="framework/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom script file -->
+	<script src="framework/js/register1.js"></script>
+</body>
+</html>
